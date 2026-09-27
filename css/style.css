@@ -1,0 +1,222 @@
+:root
+{
+    --primary-color: #1e293b;
+    --accent-color: #2563eb;
+    --bg-color: #f8fafc;
+    --card-bg: #ffffff;
+    --text-color: #334155;
+    --text-light: #64748b;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main{
+    flex:1;
+    padding: 2rem 1rem;
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Flexbox styles */
+
+header {
+    background-color: var(--primary-color);
+}
+
+.navbar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    gap: 1rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.logo {
+    color: #ffffff;
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-weight: 500;
+    padding-bottom: 0.25rem;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #7484ff;
+    border-bottom: 2px solid var(--accent-color);
+}
+
+/* Flexbox: about secction */
+
+.profile-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    background-color: car(--card-bg);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0, 0.1);
+}
+
+.profile-img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.bio h1 {
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.bio h2 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+}
+
+/* CV page styles */
+
+.cv section {
+    background-color: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.cv-section h2 {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--bg-color);
+    padding-bottom: 0.5rem;
+}
+
+.cv-item{
+    margin-bottom: 1rem;
+}
+
+.cv-item h3{
+    font-size: 1.1rem;
+}
+
+.cv-item .date{
+    font-size: 0.85rem;
+    color: var(--text-light);
+}
+
+/* Portfolio page styles */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.project-card{
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    overflow:hidden;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card img{
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.project-info{
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.project-info h3{
+    margin-bottom: 0.5rem;
+}
+
+.project-info p{
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    flex: 1;
+}
+
+.tech-stack{
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+}
+
+.project-link{
+    display: inline-block;
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Footer styles */
+footer{
+    background-color: var(--primary-color);
+    color: #cbd5e1;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+}
+
+/* Media Queries - btw I projeted the site as Mobile-first which is considered good practice in site development thus 375px has been acounted
+with upper code */
+@media (min-width: 768px){
+    .navbar{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .profile-card {
+        flex-direction: row;
+        text-align: left;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media (min-width: 1024px){
+    .portfolio-grid {
+        grid-template-columns: repeat(3,1fr);
+    }
+}
